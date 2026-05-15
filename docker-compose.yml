@@ -4,6 +4,7 @@ services:
     container_name: adguardhome
     restart: unless-stopped
     network_mode: host
+    command: ["--no-check-update", "--web-addr", "0.0.0.0:8080"]
     volumes:
       - ${ROOT_PATH}/adguardhome/work:/opt/adguardhome/work
       - ${ROOT_PATH}/adguardhome/conf:/opt/adguardhome/conf
